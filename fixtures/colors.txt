@@ -1,0 +1,2 @@
+rgb base color: 78,113,166
+Brightness: 65
