@@ -1,0 +1,27 @@
+{% extends 'commerce/main.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type='text/css' href="{% static 'auth_and_perms/css/signup.css' %}">
+{% endblock css %}
+
+{% block title %}
+Create an account
+{% endblock title %}
+
+{% block body %}
+<br>
+<br>
+<div class="container-md p-5 bg-light">
+    <h2>SignUp for free!</h2>
+    <p>We're glad you want to join us!</p>
+    <p>In Dropzone Express you can either be a client or a seller</p>
+    <br>
+    <div class="d-flex align-items-center justify-content-center">
+        <button type="button" class="btn btn-dark btn-lg mx-2">I'm a Client</button>
+        <button type="button" class="btn btn-dark btn-lg mx-2">I'm a Seller</button>
+    </div>
+
+</div>
+{% endblock body %}

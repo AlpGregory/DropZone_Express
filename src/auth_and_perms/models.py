@@ -3,6 +3,7 @@ from django.db import models
 
 
 class User(AbstractUser):
-    email = models.EmailField('Email Address', primary_key=True)
-    is_supplier = models.BooleanField('Supplier', default=False)
+    is_seller = models.BooleanField('Seller Account', default=False)
+    is_client = models.BooleanField('Client Account', default=False)
+    is_admin = models.BooleanField('Admin Account', default=False)
 

@@ -1,0 +1,17 @@
+.btn.btn-dark.btn-lg.mx-2 {
+    border-color: rgb(33,56,89);
+    background-color: white;
+    color: rgb(33,56,89);
+}
+
+.btn.btn-dark.btn-lg.mx-2:hover {
+    border: none;
+    background-color: rgb(33,56,89);
+    color: white;
+}
+
+.btn.btn-dark.btn-lg.mx-2:active {
+    border: none;
+    background-color: rgb(0,56,89);
+    color: white;
+}
