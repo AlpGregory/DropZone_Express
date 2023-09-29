@@ -1,1 +1,9 @@
 {% extends 'commerce/main.html' %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block body %}
+<a class="" href="{% url 'auth_and_perms:signup' %}">signup</a>
+{% endblock body %}

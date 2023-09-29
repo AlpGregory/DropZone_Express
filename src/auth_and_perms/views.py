@@ -1,18 +1,31 @@
+from django.contrib.auth import login
 from django.shortcuts import render, redirect
-from auth_and_perms.forms import NewUserForm, LoginUserForm
+from django.urls import reverse_lazy
+from django.views.generic import CreateView
+from auth_and_perms.forms import ClientSignUpForm
+from auth_and_perms.models import User
+
+
+class ClientSignUpView(CreateView):
+    model = User
+    form_class = ClientSignUpForm
+    template_name = 'auth_and_perms/signup_form.html'
+    success_url = reverse_lazy('commerce:welcome_page')
+
+    def get_context_data(self, **kwargs):
+        kwargs['user_type'] = 'client'
+
+        return super().get_context_data(**kwargs)
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+
+        return redirect('commerce:welcome_page')
 
 
 def signup(request):
     return render(request, 'auth_and_perms/signup.html')
-
-
-def client_signup(request):
-    if request.method == 'POST':
-        form = NewUserForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-
-    return redirect('auth_and_perms.login')
 
 
 def seller_signup(request):
@@ -23,5 +36,5 @@ def admin_signup(request):
     pass
 
 
-def login(request):
+def login_view(request):
     return render(request, 'auth_and_perms/login.html')

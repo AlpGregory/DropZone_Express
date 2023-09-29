@@ -11,17 +11,12 @@ Create an account
 {% endblock title %}
 
 {% block body %}
+<h2>SignUp for free!</h2>
+<p>We're glad you want to join us!</p>
+<p>In Dropzone Express you can either be a client or a seller</p>
 <br>
-<br>
-<div class="container-md p-5 bg-light">
-    <h2>SignUp for free!</h2>
-    <p>We're glad you want to join us!</p>
-    <p>In Dropzone Express you can either be a client or a seller</p>
-    <br>
-    <div class="d-flex align-items-center justify-content-center">
-        <button type="button" class="btn btn-dark btn-lg mx-2">I'm a Client</button>
-        <button type="button" class="btn btn-dark btn-lg mx-2">I'm a Seller</button>
-    </div>
-
+<div class="d-flex align-items-center justify-content-center">
+    <a href="{% url 'auth_and_perms:client_signup' %}" type="button" class="btn btn-custom btn-lg mx-2">I'm a Client</a>
+    <button type="button" class="btn btn-custom btn-lg mx-2">I'm a Seller</button>
 </div>
 {% endblock body %}

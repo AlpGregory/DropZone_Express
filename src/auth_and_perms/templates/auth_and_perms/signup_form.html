@@ -1,0 +1,16 @@
+{% extends 'commerce/main.html' %}
+
+{% block title %}
+Client SignUp
+{% endblock title %}
+
+{% block body %}
+<form action="#" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ form.as_p }}
+    </div>
+    <a href="{% url 'auth_and_perms:signup' %}" class="btn btn-outline-danger btn-lg mx-2" type="button">Cancel</a>
+    <button class="btn btn-custom btn-lg mx-2" type="submit">Submit</button>
+</form>
+{% endblock body %}
